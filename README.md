@@ -1,0 +1,4 @@
+# Assignment 4: CI/CD Pipeline
+
+**Reflection on Automated Validation:**
+Moving from manual execution to an automated GitHub Actions pipeline ensures the environment is strictly validated before any code is merged. I configured the pipeline to trigger on pushes to non-main branches (using `branches-ignore: main`) and on pull requests to act as a safeguard. The automated virtual machine checks out the code, installs dependencies from `requirements.txt`, runs a syntax linter (`flake8`), and performs a PyTorch dry run. Finally, it uses the `upload-artifact` action to safely store this documentation file (`project-doc`), proving the pipeline successfully navigated from integration to artifact generation.
